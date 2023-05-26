@@ -3,6 +3,7 @@ p {
   width: 45px;
   border: 3px solid black;
   position: absolute;
+  display: none;
 }
 
 p:nth-child(1) {
