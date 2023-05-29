@@ -1,1 +1,7 @@
-<app-user></app-user>
+<!-- <app-block></app-block> -->
+<!-- <app-user></app-user> -->
+<h1 [ngStyle]="{color:isAdmin ? 'red' : 'black'}">Bonjour!</h1>
+<button>View</button>
+<button *ngIf="isAdmin">Edit</button>
+<button *ngIf="!isAdmin" (click)="connect()">Connect</button>
+<button *ngIf="isAdmin" (click)="disconnect()">Disonnect</button>

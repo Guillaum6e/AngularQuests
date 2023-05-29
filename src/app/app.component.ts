@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Quest02';
+  title = 'Quest03';
+  isAdmin = false;
+
+  connect() {
+    this.isAdmin = true;
+  }
+
+  disconnect() {
+    this.isAdmin = false;
+  }
 }
