@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Quest04';
+  title = 'Quest05';
   isAdmin = false;
 
   connect() {

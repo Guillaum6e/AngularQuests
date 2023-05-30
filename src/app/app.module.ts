@@ -7,13 +7,15 @@ import { BlockComponent } from './sign-up/block.component';
 import { UserComponent } from './user/user.component';
 import { FormsModule } from '@angular/forms';
 import { MenuComponent } from './menu/menu.component';
+import { MyFormComponent } from './my-form/my-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BlockComponent,
     UserComponent,
-    MenuComponent
+    MenuComponent,
+    MyFormComponent
   ],
   imports: [
     BrowserModule,
