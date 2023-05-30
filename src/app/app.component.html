@@ -1,7 +1,25 @@
 <!-- <app-block></app-block> -->
+
 <!-- <app-user></app-user> -->
-<h1 [ngStyle]="{color:isAdmin ? 'red' : 'black'}">Bonjour!</h1>
+
+<!-- <h1 [ngStyle]="{color:isAdmin ? 'red' : 'black'}">Bonjour!</h1>
 <button>View</button>
 <button *ngIf="isAdmin">Edit</button>
 <button *ngIf="!isAdmin" (click)="connect()">Connect</button>
-<button *ngIf="isAdmin" (click)="disconnect()">Disonnect</button>
+<button *ngIf="isAdmin" (click)="disconnect()">Disonnect</button> -->
+
+<!-- <ul>
+  <li>
+    <a [routerLink]="['/']">HOME</a>
+  </li>
+  <li>
+    <a [routerLink]="['/user']">USER</a>
+  </li>
+  <li>
+    <a [routerLink]="['/block']">BLOCK</a>
+  </li>
+</ul> -->
+
+<app-menu></app-menu>
+
+<router-outlet></router-outlet>
