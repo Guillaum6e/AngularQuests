@@ -1,5 +1,4 @@
-<div>
-  <img [src]="user.photo" [alt]="user.name">
+<!-- <img [src]="user.photo" [alt]="user.name">
   <p>Nom: {{user.name}}</p>
   <p>Prénom: {{user.firstName}}</p>
   <p>Citation: {{user.quote}}</p>
@@ -7,5 +6,12 @@
   <input type="text" [(ngModel)]="user.quote">
   <p *ngIf="user.ageDisplay === true">Et j'ai {{user.age}} ans</p>
   <button *ngIf="user.ageDisplay === false" (click)="showAge()">Montrer l'âge</button>
-  <button *ngIf="user.ageDisplay === true" (click)="hideAge()">Cacher l'âge</button>
-</div>
+  <button *ngIf="user.ageDisplay === true" (click)="hideAge()">Cacher l'âge</button> -->
+
+<p>This dev is {{dev.firstname}} {{dev.lastname}}, {{dev.gender}} {{dev.age}}
+  and here are his/her skills:
+</p>
+<ul *ngFor="let skill of dev.skills">
+
+  <app-skill [skill]="skill"></app-skill>
+</ul>

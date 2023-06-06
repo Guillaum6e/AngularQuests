@@ -8,6 +8,7 @@ import { UserComponent } from './user/user.component';
 import { FormsModule } from '@angular/forms';
 import { MenuComponent } from './menu/menu.component';
 import { MyFormComponent } from './my-form/my-form.component';
+import { SkillComponent } from './skill/skill.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +16,13 @@ import { MyFormComponent } from './my-form/my-form.component';
     BlockComponent,
     UserComponent,
     MenuComponent,
-    MyFormComponent
+    MyFormComponent,
+    SkillComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
