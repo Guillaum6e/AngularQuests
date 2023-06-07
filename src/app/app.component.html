@@ -20,6 +20,10 @@
   </li>
 </ul> -->
 
+<app-my-form (sendOnomatopiaToParent)="onReceiveNewOnomatopia($event)"></app-my-form>
+<ul>
+  <li *ngFor="let onomatopoeia of onomatopoeiaList">{{onomatopoeia}}</li>
+</ul>
 <app-menu></app-menu>
 
 <router-outlet></router-outlet>

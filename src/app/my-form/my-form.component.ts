@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-my-form',
@@ -7,6 +7,13 @@ import { Component } from '@angular/core';
 })
 export class MyFormComponent {
   model: Order = new Order("", "", "", "");
+
+  public newOnomatopia: string = "";
+  @Output() sendOnomatopiaToParent: EventEmitter<string> = new EventEmitter();
+
+  createOnomatopia(): void {
+    this.sendOnomatopiaToParent.emit(this.newOnomatopia);
+  }
 
   onSubmit() {
     console.log(this.model);
@@ -18,6 +25,6 @@ export class Order {
     public firstname: string,
     public lastname: string,
     public email: string,
-    public password: string
+    public password: string,
   ) { }
 }

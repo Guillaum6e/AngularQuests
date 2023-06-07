@@ -6,8 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Quest05';
+  title = 'Quest08';
   isAdmin = false;
+
+  public onomatopoeiaList: string[] = ["test"];
+  onReceiveNewOnomatopia(event: string): void {
+    this.onomatopoeiaList.push(event);
+  }
 
   connect() {
     this.isAdmin = true;

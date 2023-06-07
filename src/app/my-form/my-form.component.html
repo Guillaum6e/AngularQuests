@@ -1,4 +1,4 @@
-<form #myForm="ngForm" (ngSubmit)="myForm.valid && onSubmit()">
+<!-- <form #myForm="ngForm" (ngSubmit)="myForm.valid && onSubmit()">
   <fieldset>
     <label for="firstname-order">Firstname</label>
     <input id="firstname-order" name="firstname-order" type="text" [(ngModel)]="model.firstname" #firstname="ngModel"
@@ -43,4 +43,10 @@
 
   <button type="reset">Restaurer</button>
   <button type="submit">Sauvegarder</button>
+</form> -->
+
+<form>
+  <label for="newOnomatopia">New Onomatopia</label>
+  <input type="text" name="newOnomatopia" id="newOnomatopia" [(ngModel)]="newOnomatopia" required>
+  <button (click)="createOnomatopia()">Create Onomatopia</button>
 </form>
