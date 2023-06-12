@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { passwordValidator } from './ValidationErrors';
+import { emailValidator } from './email-Validators';
 
 @Component({
   selector: 'app-my-form',
@@ -10,29 +11,17 @@ import { passwordValidator } from './ValidationErrors';
 export class MyFormComponent {
 
   myForm = this.fb.group({
-    fullname: [''],
+    fullname: ['', [Validators.required]],
     credentials: this.fb.group({
-      email: [''],
-      password: ['']
+      email: ['', [emailValidator, Validators.required]],
+      password: ['', [passwordValidator, Validators.required]]
     }),
     address: this.fb.group({
-      street: [''],
-      city: [''],
-      zipcode: [''],
+      street: ['', Validators.pattern(RegExp('[a-z ]{1,50}/i'))],
+      city: ['', Validators.pattern(RegExp('[a-z ]{1,50}/i'))],
+      zipcode: ['', Validators.pattern(RegExp('[0-9]{1,5}'))],
     }),
   });
-
-  // myForm = this.fb.group({
-  //   fullname: ['', [Validators.required]],
-  //   credentials: this.fb.group({
-  //    email: ['', [Validators.email, Validators.required]],
-  //    password: ['', [passwordValidator, Validators.required]]}),
-  //   address: this.fb.group({
-  //     street: ['', Validators.pattern(RegExp('[a-z ]{1,50}/i'))],
-  //     city: ['', Validators.pattern(RegExp('[a-z ]{1,50}/i'))],
-  //     zipcode: ['', Validators.pattern(RegExp('[0-9]{1,5}'))],
-  //   }),
-  // });
 
   constructor(private fb: FormBuilder) { }
 
@@ -41,8 +30,8 @@ export class MyFormComponent {
   onSubmit() {
     if (this.myForm.valid) {
       const fullname = this.myForm.value.fullname!;
-      const email = this.myForm.value.credentials!.email!;
-      const password = this.myForm.value.credentials!.password!;
+      const email = this.myForm.value.credentials?.email!;
+      const password = this.myForm.value.credentials?.password!;
       const street = this.myForm.value.address?.street!;
       const city = this.myForm.value.address?.city!;
       const zipcode = parseInt(this.myForm.value.address?.zipcode!);
